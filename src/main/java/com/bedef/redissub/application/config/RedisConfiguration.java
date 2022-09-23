@@ -1,5 +1,6 @@
-package com.bedef.redissub;
+package com.bedef.redissub.application.config;
 
+import com.bedef.redissub.application.RedisMessageSubscriber;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +15,9 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer;
 @Configuration
 public class RedisConfiguration {
 
-    @Value("${redis.host}")
+    @Value("${redis.host:localhost}")
     private String host;
-    @Value("${redis.port}")
+    @Value("${redis.port:6379}")
     private int port;
 
     @Value("${redis.topic}")

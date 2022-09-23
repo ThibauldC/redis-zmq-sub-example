@@ -1,10 +1,7 @@
-package com.bedef.redissub;
+package com.bedef.redissub.application;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 
 @SpringBootApplication
 public class RedisSubApplication {

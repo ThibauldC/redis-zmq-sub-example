@@ -2,3 +2,5 @@
 #  host: localhost
 #  port: 6379
 #  stream: fake-stream
+#  consumerGroup: bedef-group
+#  consumerName: bedef-consumer

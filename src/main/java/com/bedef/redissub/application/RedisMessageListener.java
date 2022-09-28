@@ -12,9 +12,13 @@ public class RedisMessageListener implements StreamListener<String, MapRecord<St
     @Autowired
     StringRedisTemplate redisTemplate;
 
+    @Autowired
+    MessageHandler messageHandler;
+
     @Override
     public void onMessage(MapRecord<String, String, String> message) {
         System.out.println("Stream: " + message.getStream() + ";" + "Message: " + message.getValue().get("info"));
+        messageHandler.insertInfo(message);
         redisTemplate.opsForStream().acknowledge("bedef-group", message);
     }
 }

@@ -1,4 +1,4 @@
-package com.bedef.redissub.application;
+package com.bedef.redissub.application.redis;
 
 import com.bedef.redissub.application.flowable.MessageHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,16 @@ public class RedisMessageListener implements StreamListener<String, MapRecord<St
     @Override
     public void onMessage(MapRecord<String, String, String> message) {
         System.out.println("Stream: " + message.getStream() + ";" + "Message: " + message.getValue().get("info"));
-        //messageHandler.insertInfo(message);
+        //this.handleMessage(message);
         redisTemplate.opsForStream().acknowledge("bedef-group", message);
+    }
+
+    private void handleMessage(MapRecord<String, String, String> message){
+        if(message.getValue().containsKey("info")){
+            messageHandler.insertInfo(message.getValue().get("info"));
+        }
+        else{
+            throw new RuntimeException("Person info not found in message");
+        }
     }
 }

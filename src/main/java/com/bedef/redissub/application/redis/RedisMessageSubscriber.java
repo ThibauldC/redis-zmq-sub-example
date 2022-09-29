@@ -1,6 +1,6 @@
-package com.bedef.redissub.application;
+package com.bedef.redissub.application.redis;
 
-import com.bedef.redissub.application.config.RedisConfiguration;
+import com.bedef.redissub.application.MessageSubscriber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConditionalOnProperty(name="queue", havingValue = "redis", matchIfMissing = true)
-public class RedisMessageSubscriber implements MessageSubscriber{
+public class RedisMessageSubscriber implements MessageSubscriber {
 
     @Autowired
     RedisConfiguration redisConfiguration;
@@ -32,18 +32,18 @@ public class RedisMessageSubscriber implements MessageSubscriber{
     Consumer consumer;
 
     @Override
-    public void subscribe() {
-        this.createConsumerGroup();
+    public void subscribe(String channel) {
+        this.createConsumerGroup(channel);
 
-        streamMessageListenerContainer.receive(consumer, StreamOffset.create(redisConfiguration.getStream(), ReadOffset.lastConsumed()), redisMessageListener);
+        streamMessageListenerContainer.receive(consumer, StreamOffset.create(channel, ReadOffset.lastConsumed()), redisMessageListener);
         streamMessageListenerContainer.start();
     }
 
-    private void createConsumerGroup(){
+    private void createConsumerGroup(String channel){
         //You need a consumer group to be able to continue reading from the latest offset in case of failure
         try{
             redisTemplate.opsForStream()
-                    .createGroup(redisConfiguration.getStream(), ReadOffset.from("0-0"), redisConfiguration.getConsumerGroup());
+                    .createGroup(channel, ReadOffset.from("0-0"), redisConfiguration.getConsumerGroup());
         }
         catch(InvalidDataAccessApiUsageException e){
             System.out.printf("Consumer group %s already exists%n", redisConfiguration.getConsumerGroup());

@@ -1,4 +1,4 @@
-package com.bedef.redissub.application.config;
+package com.bedef.redissub.application.redis;
 
 import lombok.Data;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 public class RedisConfiguration {
     private String host = "localhost";
     private int port = 6379;
-    private String stream;
     private String consumerGroup = "bedef-group";
     private String consumerName = "bedef-consumer";
 }

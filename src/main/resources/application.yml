@@ -1,8 +1,13 @@
 #redis:
 #  host: localhost
 #  port: 6379
-#  stream: fake-stream
 #  consumerGroup: bedef-group
 #  consumerName: bedef-consumer
 
 #queue: redis #redis or zmq
+
+#subscriber:
+#  channel: fake-channel
+#
+#zmq:
+#  host: localhost

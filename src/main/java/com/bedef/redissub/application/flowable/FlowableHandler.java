@@ -1,4 +1,4 @@
-package com.bedef.redissub.application;
+package com.bedef.redissub.application.flowable;
 
 import com.bedef.redissub.domain.PersonInfo;
 import com.bedef.redissub.feign.PersonInfoClient;

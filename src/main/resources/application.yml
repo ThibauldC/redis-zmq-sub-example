@@ -4,3 +4,5 @@
 #  stream: fake-stream
 #  consumerGroup: bedef-group
 #  consumerName: bedef-consumer
+
+#queue: redis #redis or zmq

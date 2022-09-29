@@ -1,6 +1,5 @@
-package com.bedef.redissub.application;
+package com.bedef.redissub.application.flowable;
 
-import com.bedef.redissub.domain.PersonInfo;
 import org.springframework.data.redis.connection.stream.MapRecord;
 
 public interface MessageHandler {

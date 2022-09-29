@@ -41,12 +41,13 @@ public class ZMQMessageSubscriber implements MessageSubscriber {
 
             while(true){
                 String info = subscriber.recvStr(0);
-                //messageHandler.insertInfo(info.replaceFirst(filter, ""));
 
                 //channel names are still part of the message
                 if(info.equals(filter + "END")){
                     break;
                 }
+
+                messageHandler.insertInfo(info.replaceFirst(filter, ""));
                 System.out.println(numberOfUpdates + ": " + info);
                 numberOfUpdates++;
             }

@@ -1,4 +1,4 @@
-package com.bedef.redissub.application.redis;
+package com.bedef.sub.application.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

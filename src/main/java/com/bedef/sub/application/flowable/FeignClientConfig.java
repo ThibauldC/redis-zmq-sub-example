@@ -1,6 +1,6 @@
-package com.bedef.redissub.application.flowable;
+package com.bedef.sub.application.flowable;
 
-import com.bedef.redissub.feign.PersonInfoClient;
+import com.bedef.sub.feign.PersonInfoClient;
 import feign.Feign;
 import feign.jackson.JacksonEncoder;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.bedef.redissub.feign;
+package com.bedef.sub.feign;
 
 import feign.Logger;
 import org.springframework.context.annotation.Bean;

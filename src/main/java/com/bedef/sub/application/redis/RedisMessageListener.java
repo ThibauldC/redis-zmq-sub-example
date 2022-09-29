@@ -1,6 +1,6 @@
-package com.bedef.redissub.application.redis;
+package com.bedef.sub.application.redis;
 
-import com.bedef.redissub.application.flowable.MessageHandler;
+import com.bedef.sub.application.flowable.MessageHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.redis.connection.stream.MapRecord;

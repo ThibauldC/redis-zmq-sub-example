@@ -1,6 +1,6 @@
-package com.bedef.redissub.feign;
+package com.bedef.sub.feign;
 
-import com.bedef.redissub.domain.PersonInfo;
+import com.bedef.sub.domain.PersonInfo;
 import feign.Headers;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;

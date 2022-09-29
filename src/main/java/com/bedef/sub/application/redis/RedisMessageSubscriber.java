@@ -1,6 +1,6 @@
-package com.bedef.redissub.application.redis;
+package com.bedef.sub.application.redis;
 
-import com.bedef.redissub.application.MessageSubscriber;
+import com.bedef.sub.application.MessageSubscriber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.dao.InvalidDataAccessApiUsageException;

@@ -1,7 +1,7 @@
-package com.bedef.redissub.application.flowable;
+package com.bedef.sub.application.flowable;
 
-import com.bedef.redissub.domain.PersonInfo;
-import com.bedef.redissub.feign.PersonInfoClient;
+import com.bedef.sub.domain.PersonInfo;
+import com.bedef.sub.feign.PersonInfoClient;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;

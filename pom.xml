@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bedef</groupId>
-	<artifactId>redis-sub</artifactId>
+	<artifactId>sub</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>redis-sub</name>
-	<description>Redis subscriber</description>
+	<name>redis-zmq-sub-example</name>
+	<description>Redis and ZMQ subscriber example</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

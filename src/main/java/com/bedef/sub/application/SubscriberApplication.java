@@ -1,4 +1,4 @@
-package com.bedef.redissub.application;
+package com.bedef.sub.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RedisSubApplication implements CommandLineRunner {
+public class SubscriberApplication implements CommandLineRunner {
 
 	@Value("${subscriber.channel}")
 	String channel;
@@ -16,7 +16,7 @@ public class RedisSubApplication implements CommandLineRunner {
 	MessageSubscriber messageSubscriber;
 
 	public static void main(String[] args) {
-		SpringApplication.run(RedisSubApplication.class, args);
+		SpringApplication.run(SubscriberApplication.class, args);
 	}
 
 	@Override

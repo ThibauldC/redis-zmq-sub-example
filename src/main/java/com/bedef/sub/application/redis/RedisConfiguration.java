@@ -1,4 +1,4 @@
-package com.bedef.redissub.application.redis;
+package com.bedef.sub.application.redis;
 
 import lombok.Data;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

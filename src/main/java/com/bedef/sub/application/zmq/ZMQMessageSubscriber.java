@@ -1,7 +1,7 @@
-package com.bedef.redissub.application.zmq;
+package com.bedef.sub.application.zmq;
 
-import com.bedef.redissub.application.MessageSubscriber;
-import com.bedef.redissub.application.flowable.MessageHandler;
+import com.bedef.sub.application.MessageSubscriber;
+import com.bedef.sub.application.flowable.MessageHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

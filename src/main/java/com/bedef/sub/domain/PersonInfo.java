@@ -1,4 +1,4 @@
-package com.bedef.redissub.domain;
+package com.bedef.sub.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
